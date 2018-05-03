@@ -172,7 +172,7 @@ class Application extends ConsoleApplication
         $appPath = $this->appPath;
 
         if ($this->vendorPath) {
-            return require $this->vendorPath.'/craft-cli/bootstrap/src/bootstrap-craft2.php';
+            return require $this->vendorPath.'/laalex/bootstrap/src/bootstrap-craft2.php';
         }
 
         return require __DIR__.'/../../bootstrap/src/bootstrap-craft2.php';
