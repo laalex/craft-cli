@@ -34,6 +34,12 @@ class RebuildSearchIndexesCommand extends Command
                 'Offset the query',
                 0,
             ),
+	        array(
+		        'limit',
+		        InputArgument::OPTIONAL,
+		        'Limit of the query',
+		        0,
+	        ),
         );
     }
 
@@ -43,12 +49,14 @@ class RebuildSearchIndexesCommand extends Command
     protected function fire()
     {
         $offset = $this->argument('offset');
+        $limit = $this->argument('limit');
 
         // Get all the element IDs ever
         $result = $this->craft->db->createCommand()
             ->select('id, type')
             ->from('elements')
             ->offset($offset)
+	        ->limit($limit)
             ->queryAll();
 
         $progressBar = new ProgressBar($this->output, count($result) + $offset);

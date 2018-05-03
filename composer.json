@@ -3,8 +3,8 @@
     "description": "Command line interface for Craft CMS",
     "authors": [
         {
-            "name": "Rob Sanchez",
-            "email": "info@robsanchez.com"
+            "name": "Alex Lamba",
+            "email": "alex@codesilk.com"
         }
     ],
     "autoload": {
